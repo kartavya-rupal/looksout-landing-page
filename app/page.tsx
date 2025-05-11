@@ -22,6 +22,7 @@ export default function LandingPage() {
       alert('This browser does not support notifications.');
       return;
     }
+    console.log('Current permission:', notificationPermission);
 
     if (Notification.permission === 'granted') {
       try {
