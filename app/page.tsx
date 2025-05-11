@@ -81,7 +81,10 @@ export default function LandingPage() {
       <section className="flex flex-col md:flex-row items-center px-10 justify-around">
         <div className="text-white max-w-xl space-y-6">
           <h1 className="text-5xl font-bold leading-tight">Your Supercharged Design Workflow.</h1>
-          <p className="text-lg">We've been told it is not possible to overachieve our customers' expectations. We have not reinvented the wheel, we decided to build upon it.</p>
+          <p className="text-lg">
+            We&apos;ve been told it is not possible to overachieve our customers&apos; expectations. We have not reinvented the wheel, we decided to build upon it.
+          </p>
+
           <button
             className="bg-[#437EF7] text-white px-5 py-3 rounded font-semibold cursor-pointer "
             onClick={handleSendNotification}
@@ -267,10 +270,11 @@ export default function LandingPage() {
           <div className="mb-6">
             <Image src="/logo2.png" alt="Lookscout Logo" width={150} height={40} className="mx-auto" />
             <p className="mt-4 text-lg text-[#272D37]">
-              Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I can't say enough about LookScout.
+              Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I can&apos;t say enough about LookScout.
               <br />
               Great job, I will definitely be ordering again!
             </p>
+
           </div>
           <div className="flex items-center justify-center mt-6">
             <Image
