@@ -393,7 +393,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="w-full border-t py-12 bg-white text-center px-4">
+      <section className="w-full py-12 bg-white text-center px-4">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Proud to Be Used By</h2>
         <p className="text-sm text-gray-500 max-w-2xl mx-auto mb-10">
           Professionally cultivate one-to-one customer service with robust ideas.
