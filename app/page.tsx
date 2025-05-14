@@ -22,7 +22,7 @@ export default function LandingPage() {
       alert('This browser does not support notifications.');
       return;
     }
-    console.log('Current permission:', notificationPermission);
+    console.log( notificationPermission);
 
     if (Notification.permission === 'granted') {
       try {
@@ -394,7 +394,6 @@ export default function LandingPage() {
           Welcome to your new digital reality that will rock your world truly at all throughout.
         </h1>
 
-        {/* Email Input */}
         <div className="flex justify-center items-center gap-2 max-w-md mx-auto mb-6">
           <input
             type="email"
@@ -406,7 +405,6 @@ export default function LandingPage() {
           </button>
         </div>
 
-        {/* Features */}
         <div className="flex justify-center gap-8 text-sm text-gray-600">
           <div className="flex items-center gap-2">
             <Image src="/tick.png" alt="Support" width={15} height={20} />

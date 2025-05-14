@@ -1,0 +1,36 @@
+{
+    "name": "LooksOut",
+    "short_name": "LooksOut",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "orientation": "portrait",
+    "id": "/",
+    "icons": [
+        {
+            "src": "/icon192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/icon512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/homepage.png",
+            "sizes": "1613x706",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/mobile.png",
+            "sizes": "515x734",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ]
+}
