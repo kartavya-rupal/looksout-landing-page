@@ -22,13 +22,13 @@ export default function LandingPage() {
       alert('This browser does not support notifications.');
       return;
     }
-    console.log( notificationPermission);
+    console.log(notificationPermission);
 
     if (Notification.permission === 'granted') {
       try {
         const notification = new Notification('Lookscout', {
           body: 'This is your notification!',
-          tag: 'lookscout-notification', 
+          tag: 'lookscout-notification',
           requireInteraction: true,
         });
         notification.onclick = () => {
@@ -60,18 +60,24 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="bg-[#2B63D9] text-white font-sans">
-      <header className="flex items-center justify-between px-25 py-6 bg-[#2B63D9]">
-        <div className="flex items-center space-x-2">
-          <Image src="/companylogo.png" alt="Lookscout Logo" width={190} height={10} />
+    <div className="bg-[#2B63D9] text-white font-sans min-h-screen">
+      <header className="flex items-center justify-between px-6 lg:px-25 py-6">
+        <div className="flex items-center">
+          <Image src="/companylogo.png" alt="Lookscout Logo" width={140} height={30} />
         </div>
+        <button className="md:hidden">
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
         <nav className="hidden md:flex space-x-8 text-white">
           <a href="#" className="hover:underline">Home</a>
           <a href="#" className="hover:underline">Our Products</a>
           <a href="#" className="hover:underline">Resources</a>
           <a href="#" className="hover:underline">Contacts</a>
         </nav>
-        <div className="space-x-4">
+        <div className="hidden md:flex space-x-4">
           <button className="text-white">Log in</button>
           <button className="bg-[#437EF7] text-white font-semibold px-4 py-2 rounded">Sign up</button>
         </div>
@@ -79,73 +85,82 @@ export default function LandingPage() {
 
       <span className="block h-[2px] bg-[#437EF7]"></span>
 
-      <section className="flex flex-col md:flex-row items-center px-10 justify-around">
-        <div className="text-white max-w-xl space-y-6">
-          <h1 className="text-5xl font-bold leading-tight">Your Supercharged Design Workflow.</h1>
-          <p className="text-lg">
+      <section className="flex flex-col md:flex-row items-center justify-between px-6 lg:px-25 py-6 gap-8">
+        <div className="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
+          <Image src="/photo.png" alt="Hero Graphic" width={450} height={500} />
+        </div>
+        <div className="w-full md:w-1/2 order-2 md:order-1 text-center md:text-left space-y-6">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+            Your Supercharged Design Workflow.
+          </h1>
+          <p className="text-base md:text-lg">
             We&apos;ve been told it is not possible to overachieve our customers&apos; expectations. We have not reinvented the wheel, we decided to build upon it.
           </p>
-
           <button
-            className="bg-[#437EF7] text-white px-5 py-3 rounded font-semibold cursor-pointer "
+            className="bg-[#437EF7] text-white px-5 py-3 rounded font-semibold"
             onClick={handleSendNotification}
           >
             Send Notification
           </button>
-          <div className="flex items-center space-x-6 pt-8">
-            <Image src="/gitlab.png" alt="GitLab" width={110} height={125} />
-            <Image src="/slack.png" alt="Slack" width={110} height={24} />
-            <Image src="/netflix.png" alt="Netflix" width={110} height={24} />
-            <Image src="/paypal.png" alt="PayPal" width={110} height={24} />
+
+          <div className="flex flex-wrap justify-center md:justify-start gap-6 pt-8">
+            <Image src="/gitlab.png" alt="GitLab" width={90} height={24} />
+            <Image src="/slack.png" alt="Slack" width={90} height={24} />
+            <Image src="/netflix.png" alt="Netflix" width={90} height={24} />
+            <Image src="/paypal.png" alt="PayPal" width={90} height={24} />
           </div>
-        </div>
-        <div className="mt-10 md:mt-0 bg-primary/700">
-          <Image src="/photo.png" alt="Profile" width={550} height={500} />
         </div>
       </section>
 
-      <section className="bg-white text-center text-[#1D4ED8] py-20 px-27">
+      <section className="bg-white text-center text-[#1D4ED8] py-20 px-6 lg:px-25">
         <h2 className="text-3xl text-[#272D37] font-bold mb-4">Messaging for all</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-16">User generated content in real-time will have multiple touchpoints for offshoring.</p>
+        <p className="text-gray-600 max-w-md mx-auto mb-16">
+          User generated content in real-time will have multiple touchpoints for offshoring.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-[#272D37]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
             {
               title: 'Easier Work Organization',
               desc: 'Efficiently unleash cross-media information without cross-media value. Quickly timely deliverables for real-time schemas.',
-              icon: '/easyworkorg.png'
-            },
-            {
-              title: 'Fast Connection',
-              desc: 'Completely pursue scalable customer cross- media through potentialities. Holistically quickly installed portals.',
-              icon: '/fastconn.png'
+              icon: '/easyworkorg.png',
             },
             {
               title: 'Streamlined Processes',
               desc: 'Objectively innovate empowered scalable manufactured products whereas parallel platforms predominate extensible.',
-              icon: '/streamproc.png'
-            },
-            {
-              title: 'Easier Integrations',
-              desc: 'Completely pursue scalable customer try through potentialities. Pontificate portals installed. Efficiently unleash information.',
-              icon: '/easyint.png'
+              icon: '/streamproc.png',
             },
             {
               title: 'Marketing Analytics',
               desc: 'Phosfluorescently engage worldwide methodologies with web-enabled Interactively coordinate.',
-              icon: '/marketanal.png'
+              icon: '/marketanal.png',
+            },
+            {
+              title: 'Fast Connection',
+              desc: 'Completely pursue scalable customer cross- media through potentialities. Holistically quickly installed portals.',
+              icon: '/fastconn.png',
+            },
+            {
+              title: 'Easier Integrations',
+              desc: 'Completely pursue scalable customer try through potentialities. Pontificate portals installed. Efficiently unleash information.',
+              icon: '/easyint.png',
             },
             {
               title: 'Workflow Builder',
               desc: 'Collaboratively administrate turnkey service channels whereas virtual e-tailers. This is objectively scalable metrics whereas.',
-              icon: '/workflow.png'
-            }
+              icon: '/workflow.png',
+            },
           ].map((feature, index) => (
-            <div key={index} className="space-y-4">
+            <div
+              key={index}
+              className="flex flex-col items-center text-center space-y-4 p-6 rounded-md"
+            >
               <Image src={feature.icon} alt={feature.title} width={40} height={40} />
               <h3 className="text-lg font-semibold text-black">{feature.title}</h3>
               <p className="text-gray-600 text-sm">{feature.desc}</p>
-              <a href="#" className="text-[#1D4ED8] font-medium inline-flex items-center">Learn more →</a>
+              <a href="#" className="text-[#1D4ED8] font-medium inline-flex items-center">
+                Learn more →
+              </a>
             </div>
           ))}
         </div>
@@ -162,8 +177,9 @@ export default function LandingPage() {
               derive convergence on cross-platform integration.
             </p>
           </div>
-          <div className="flex flex-row md:grid-cols-2 gap-12 justify-between items-center">
-            <div className="space-y-10 ">
+
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+            <div className="space-y-10 w-full lg:w-1/2">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 bg-blue-600 text-white p-2 rounded-full">
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -171,7 +187,9 @@ export default function LandingPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-[#272D37]">Explore ideas together</h4>
+                  <h4 className="text-lg font-semibold text-[#272D37]">
+                    Explore ideas together
+                  </h4>
                   <p className="text-gray-600">
                     Engage audience segments and finally create actionable insights. Amplify vertical integration.
                   </p>
@@ -188,7 +206,9 @@ export default function LandingPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-[#272D37]">Bring those ideas to life</h4>
+                  <h4 className="text-lg font-semibold text-[#272D37]">
+                    Bring those ideas to life
+                  </h4>
                   <p className="text-gray-600">
                     Engage audience segments and finally create actionable insights. Amplify vertical integration.
                   </p>
@@ -205,7 +225,9 @@ export default function LandingPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-[#272D37]">Ship better outcomes</h4>
+                  <h4 className="text-lg font-semibold text-[#272D37]">
+                    Ship better outcomes
+                  </h4>
                   <p className="text-gray-600">
                     Engage audience segments and finally create actionable insights. Amplify vertical integration.
                   </p>
@@ -216,23 +238,16 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="">
-              <Image src="/foto4.png" width={400} height={400} alt="Office" />
+            <div className="w-full lg:w-1/2">
+              <Image src="/foto4.png" width={500} height={500} alt="Office" className="mx-auto" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#151B28] text-white py-25 px-5 md:px-16 flex flex-col md:flex-row items-center justify-around">
-        <div className="relative w-[500px] h-[300px] md:w-[400px] md:h-[400px]">
+      <section className="bg-[#151B28] text-white py-16 px-6 md:px-16 flex flex-col-reverse md:flex-row items-center justify-around gap-12 md:gap-20">
 
-          <img
-            src="/halfcircle.png"
-            alt="Office"
-          />
-        </div>
-
-        <div className="flex flex-col gap-8 max-w-xl">
+        <div className="flex flex-col gap-10 max-w-xl">
           {[
             {
               icon: "✈️",
@@ -257,37 +272,45 @@ export default function LandingPage() {
               <div>
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="text-sm text-gray-300 mt-1">{item.description}</p>
-                <a href="#" className="text-sm text-blue-400 mt-1 inline-block">
+                <a href="#" className="text-sm text-blue-400 mt-1 inline-block hover:underline">
                   Learn more →
                 </a>
               </div>
             </div>
           ))}
         </div>
+
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+          <img
+            src="/halfcircle.png"
+            alt="Decorative Half Circle"
+            className="mx-auto"
+          />
+        </div>
       </section>
 
       <section className="bg-white py-16 px-4">
-        <div className="max-w-4xl mx-auto py-8 px-5 text-center bg-[#F8F9FB]">
-          <div className="mb-6">
-            <Image src="/logo2.png" alt="Lookscout Logo" width={150} height={40} className="mx-auto" />
+        <div className="max-w-md mx-auto text-center  lg:max-w-3xl">
+          <div className="bg-[#F8F9FB] p-6 rounded-lg shadow-sm text-left ">
+            <div className="flex items-center gap-2 mb-4">
+              <Image src="/logo2.png" width={150} height={40} alt="Lookscout" />
+            </div>
+
             <p className="mt-4 text-lg text-[#272D37]">
-              Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I can&apos;t say enough about LookScout.
+              Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I can't say enough about LookScout.
               <br />
               Great job, I will definitely be ordering again!
             </p>
-
-          </div>
-          <div className="flex items-center justify-center mt-6">
-            <Image
-              src="/Avatar.png"
-              alt="Lisa Smith"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <div className="ml-3 text-left">
-              <p className="text-sm font-semibold text-gray-900">Lisa Smith</p>
-              <p className="text-sm text-gray-500">CEO Company</p>
+            <div className="flex items-center mt-6">
+              <img
+                src="/Avatar.png"
+                alt="Lisa Smith"
+                className="w-8 h-8 rounded-full"
+              />
+              <div className="ml-3">
+                <p className="text-sm font-semibold text-gray-900">Lisa Smith</p>
+                <p className="text-sm text-gray-500">CEO Company</p>
+              </div>
             </div>
           </div>
         </div>
@@ -370,14 +393,14 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="w-full border-t py-12 bg-white text-center">
+      <section className="w-full border-t py-12 bg-white text-center px-4">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Proud to Be Used By</h2>
         <p className="text-sm text-gray-500 max-w-2xl mx-auto mb-10">
           Professionally cultivate one-to-one customer service with robust ideas.
           Dynamically innovate resource-leveling customer service for state of the art customer service.
         </p>
 
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
+        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 ">
           <Image src="/verge.png" alt="The Verge" width={100} height={30} />
           <Image src="/slack2.png" alt="Slack" width={100} height={30} />
           <Image src="/google.png" alt="Google" width={100} height={30} />
@@ -387,7 +410,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="w-full py-16 bg-white text-center">
+      <section className="w-full py-16 bg-white text-center px-4">
         <p className="text-xs font-semibold text-blue-600 uppercase mb-4">1% of the industry</p>
 
         <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 max-w-2xl mx-auto mb-8">
@@ -422,9 +445,9 @@ export default function LandingPage() {
       </section>
 
       <footer className="bg-[#0B0D17] text-white px-6 py-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-sm text-gray-400">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-sm text-gray-400 text-center md:text-left">
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <Image src="/logo3.png" alt="Logo" width={150} height={30} className="mb-4" />
             <p>Generate outside the box thinking with the possibility to target the low.</p>
           </div>
@@ -449,10 +472,10 @@ export default function LandingPage() {
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-medium mb-2">Get Email Notifications</h4>
             <p className="mb-4">Generate outside the box thinking with the possibility to target the low</p>
-            <div className="flex">
+            <div className="flex w-full max-w-xs">
               <input
                 type="email"
                 placeholder="Enter email..."
@@ -465,17 +488,11 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col px-25 md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="border-t border-gray-700 mt-10 pt-6 px-23 flex text-sm text-gray-500">
           <p>© 2023 Lookscout. All Rights Reserved.</p>
-          {/* <div className="flex gap-4 mt-4 md:mt-0 text-lg text-white">
-            <FaFacebookF />
-            <FaGoogle />
-            <FaGithub />
-            <FaApple />
-            <FaInstagram />
-          </div> */}
         </div>
       </footer>
+
     </div>
   );
 }
