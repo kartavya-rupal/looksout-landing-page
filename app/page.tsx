@@ -245,9 +245,17 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="bg-[#151B28] text-white py-16 px-6 md:px-16 flex flex-col-reverse md:flex-row items-center justify-around gap-12 md:gap-20">
+      <section className="bg-[#151B28] text-white py-16 px-6 md:px-16 flex flex-col md:flex-row items-center justify-around gap-12 md:gap-20">
 
-        <div className="flex flex-col gap-10 max-w-xl">
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg order-1 md:order-none">
+          <img
+            src="/halfcircle.png"
+            alt="Decorative Half Circle"
+            className="mx-auto"
+          />
+        </div>
+
+        <div className="flex flex-col gap-10 max-w-xl order-2 md:order-none">
           {[
             {
               icon: "✈️",
@@ -278,14 +286,6 @@ export default function LandingPage() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-          <img
-            src="/halfcircle.png"
-            alt="Decorative Half Circle"
-            className="mx-auto"
-          />
         </div>
       </section>
 
