@@ -297,7 +297,7 @@ export default function LandingPage() {
             </div>
 
             <p className="mt-4 text-lg text-[#272D37]">
-              Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I can't say enough about LookScout.
+              Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I can&apos;t say enough about LookScout.
               <br />
               Great job, I will definitely be ordering again!
             </p>
